@@ -1,13 +1,13 @@
 require 'pry'
 
-class Fixnum
+class String
 
   $coins = {
     25 => "Quarter", 10 => "Dime", 5 => "Nickel", 1 => "Penny"
   }
 
   define_method(:coin_combination) do
-    change = self
+    change = Integer(self)
     value = $coins.keys
     result = ""
       $coins.each do |num, name|
@@ -19,5 +19,4 @@ class Fixnum
       end
     result
   end
-
 end
